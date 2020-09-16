@@ -23,4 +23,5 @@ urlpatterns = [
     path('hello/',views.hello),
     url('^user/$',views.user),
     path('login/',views.login),
+    path('yoyoke/archive/<year>/<month>.html',views.archive),
 ]

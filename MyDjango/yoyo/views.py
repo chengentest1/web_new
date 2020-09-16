@@ -18,3 +18,16 @@ def user(request):
 
 def login(request):
     return render(request,'login.html')
+
+def archive(request,year,month):
+    res={
+        "code":"200",
+        "msg":"成功success",
+        "data":[
+            {
+                "year":year,
+                "month":month
+            }
+        ]
+    }
+    return JsonResponse(res)
