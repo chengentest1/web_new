@@ -24,4 +24,5 @@ urlpatterns = [
     url('^user/$',views.user),
     path('login/',views.login),
     path('yoyoke/archive/<year>/<month>.html',views.archive),
+    url(r'^yoyoketang2/archive/(?P<year>[0-9]{4})/(?P<month>[0-9]{2}).html$',views.archive)
 ]

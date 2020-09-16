@@ -17,7 +17,7 @@ def user(request):
     return JsonResponse(res)
 
 def login(request):
-    return render(request,'login.html')
+    return render(request,'login.html',{"year":"2020","month":"09"})
 
 def archive(request,year,month):
     res={
