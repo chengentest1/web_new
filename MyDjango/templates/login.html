@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer" />
+    <title>登录页</title>
+
+</head>
+<body>
+<h1>欢迎进入登录页面</h1>
+
+
+
+<form action="" method="POST" id="login-form" style="text-align:center;">
+    {% csrf_token %}
+    <p>
+        <input id="id_username" maxlength="254" name="username" type="text" placeholder="请输入用户名">
+    </p>
+    <p>
+        <input id="id_password" maxlength="254" name="password" type="password" placeholder="请输入密码">
+    </p>
+    <p>
+        <input type="submit" value="登录" >
+    </p>
+</form>
+
+<p>本地的；链接</p>
+
+
+<table border="1">
+    <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+    </tr>
+    <tr>
+        <td>hello</td>
+        <td>hello</td>
+    </tr>
+    <tr>
+        <td>row 2, cell 1</td>
+        <td>row 2, cell 2</td>
+    </tr>
+</table>
+
+<ol id="hhhh" name="xxxx">
+    <li>python</li>
+    <li>pytest</li>
+    <li>selenium</li>
+</ol>
+
+<ul id="hhhh" name="xxxx">
+    <li>python</li>
+    <li>pytest</li>
+    <li>selenium</li>
+</ul>
+</body>
+</html>
