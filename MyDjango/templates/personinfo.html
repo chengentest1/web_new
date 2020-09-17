@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer" />
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ name }}</h1>
+<p>姓名{{ n_name }}</p>
+<p>年龄{{ age }}</p>
+
+<p>感兴趣的技术{{ fancy.0 }},{{ fancy.1 }},{{ fancy.2 }}</p>
+
+<p>感兴趣的技术:
+{% for i in fancy %}
+{{ i }}|
+{% endfor %}
+</p>
+<h1>通过字典对象取值</h1>
+<a>博客地址：{{blog.url }}</a>
+<p>头像</p>
+<img src="{{ blog.img }}">
+
+<h1>获取类的属性，方法值</h1>
+<p>关注数：{{ myblog.guanzhu }}</p>
+<p>粉丝数：{{ myblog.fensi }}</p>
+</body>
+</html>

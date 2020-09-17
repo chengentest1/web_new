@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏-demo</title>
+</head>
+<body>
+{% for i in name_list %}
+<h1>{{ i.type }}</h1>
+    <p>
+     {% for j in i.value %}
+         {% if forloop.first %} - {% endif %}
+        {{ j }} 第 {{ forloop.counter }} 次循环
+         {% if not forloop.last %} | {% endif %}
+
+         {% endfor %}
+    </p>
+{% endfor %}
+</body>
+</html>
