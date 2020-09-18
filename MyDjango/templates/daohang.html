@@ -16,5 +16,15 @@
          {% endfor %}
     </p>
 {% endfor %}
+
+{% for name in name_list %}
+
+    {% if '计算机' not in name.type %}
+        <h1>
+        <span>{{ name.type }}</span>
+        </h1>
+    {% endif %}
+
+{% endfor %}
 </body>
 </html>
