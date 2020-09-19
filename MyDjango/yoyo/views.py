@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import render
+from yoyo.models import PeronInfo
 # Create your views here.
 
 def hello(request):
@@ -70,6 +71,57 @@ def daohang(request):
              ]}
     return render(request,"daohang.html",context)
 
+
+def qq(request):
+    if request.method=="GET":
+        print("获取get请求参数%s"%request.GET)
+        qq=request.GET.get("qq")
+        print("获取到qq的值%s"%qq)
+
+        try:
+            info=PeronInfo.objects.get(qq=qq)
+            get_name=info.name
+        except:
+            get_name="未查询到"
+        context={
+            "name":get_name
+        }
+        return render(request,'get_qq.html',context)
+
+
+def post_info(request):
+    if request.method=="GET":
+        return render(request,'post_info.html')
+    if request.method=="POST":
+        name=request.POST.get("name","")
+        age = request.POST.get("age","")
+        qq = request.POST.get("qq","")
+        # print("获取页面参数%name"%name)
+        #添加数据
+        infoobj=PeronInfo.objects.filter(qq=qq)
+        if infoobj:
+            return JsonResponse({"code": 333,
+                                 "msg": "QQ已存在",
+                                 "data": {
+                                     "name": name,
+                                     "age": age,
+                                     "qq": qq
+                                 }})
+        else:
+
+
+            info=PeronInfo.objects.create(name=name,
+                                          age=age,
+                                          qq=qq)
+            info.save()
+
+            return JsonResponse({"code":0,
+                                 "msg":"success",
+                                 "data":{
+                                     "name":name,
+                                     "age":age,
+                                     "qq":qq
+                                 }})
 
 
 

@@ -27,4 +27,6 @@ urlpatterns = [
     url(r'^yoyoketang2/archive/(?P<year>[0-9]{4})/(?P<month>[0-9]{2}).html$',views.archive),
     path('personinfo/',views.personinfo),
     path('daohang/',views.daohang),
+    path('qq/',views.qq),
+    path('postinfo/',views.post_info),
 ]
