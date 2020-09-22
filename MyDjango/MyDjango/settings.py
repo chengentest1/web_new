@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': "kecheng",
         "USER": "root",
         "PASSWORD": "123456",
-        "HOST": "192.168.80.128",
+        "HOST": "192.168.188.128",
         "PORT":"3319"
     }
 }
@@ -115,16 +115,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'#设置简体中文
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'#设置中国时区
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+# USE_TZ = True
+USE_TZ = False  #设置为False,要不然数据库时间和当前时间不一致
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
